@@ -28,7 +28,13 @@
  add TextField to this viewcontroller
  */
 - (UITextField*) addTextField:(NSString*) placeholder;
+- (UITextField*) addTextField:(NSString*) placeholder class:(Class) class;
+
 - (UITextField*) addTextField:(NSString*) placeholder
+                    textColor:(UIColor*) textColor
+                     textSize:(CGFloat) textSize;
+- (UITextField*) addTextField:(NSString*) placeholder
+                        class:(Class) class
                     textColor:(UIColor*) textColor
                      textSize:(CGFloat) textSize;
 

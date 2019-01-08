@@ -43,6 +43,21 @@
     return textfield;
 }
 
+- (UITextField*) addTextField:(NSString*) placeholder{
+    UITextField* textfield = [[UITextField alloc] init];
+    [self.view addSubview:textfield];
+    textfield.placeholder = placeholder;
+    
+    return textfield;
+}
+- (UITextField*) addTextField:(NSString*) placeholder class:(Class) class{
+    UITextField* textfield = [[class alloc] init];
+    [self.view addSubview:textfield];
+    textfield.placeholder = placeholder;
+    
+    return textfield;
+}
+
 - (UITextField*) addTextField:(NSString*) placeholder
                     textColor:(UIColor*) textColor
                      textSize:(CGFloat) textSize{
@@ -52,11 +67,14 @@
     return textfield;
 }
 
-- (UIButton*) addButton:(UIButtonType) buttonType{
-    UIButton* button = [UIButton buttonWithType:buttonType];
-    [self.view addSubview:button];
-    
-    return button;
+- (UITextField*) addTextField:(NSString*) placeholder
+                        class:(Class) class
+                    textColor:(UIColor*) textColor
+                     textSize:(CGFloat) textSize{
+    UITextField* textfield = [self addTextField:placeholder class:class];
+    textfield.textColor = textColor;
+    textfield.font = [UIFont systemFontOfSize:textSize];
+    return textfield;
 }
 
 - (UIButton*) addSolidButton:(UIColor*) color size:(CGSize) size title:(NSString*) title titleSize:(CGFloat) titleSize{
