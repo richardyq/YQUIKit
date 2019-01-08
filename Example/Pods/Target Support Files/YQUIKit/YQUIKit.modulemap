@@ -1,0 +1,6 @@
+framework module YQUIKit {
+  umbrella header "YQUIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

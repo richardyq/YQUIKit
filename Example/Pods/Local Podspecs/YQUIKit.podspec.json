@@ -1,0 +1,46 @@
+{
+  "name": "YQUIKit",
+  "version": "0.1.0",
+  "summary": "A short description of YQUIKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/richardyq@163.com/YQUIKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "richardyq@163.com": "yinquan@jahosp.com"
+  },
+  "source": {
+    "git": "https://github.com/richardyq@163.com/YQUIKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "dependencies": {
+    "Masonry": [
+
+    ],
+    "YYKit": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "CommonFuncs",
+      "source_files": "YQUIKit/Classes/CommonFuncs/**/*",
+      "public_header_files": "YQUIKit/Classes/CommonFuncs/**/*.h"
+    },
+    {
+      "name": "UIKit",
+      "source_files": "YQUIKit/Classes/UIKit/**/*",
+      "public_header_files": "YQUIKit/Classes/UIKit/**/*.h"
+    },
+    {
+      "name": "Inc",
+      "source_files": "YQUIKit/Classes/*",
+      "public_header_files": "YQUIKit/Classes/*.h"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'YQUIKit_Example' do
+  pod 'YQUIKit', :path => '../'
+
+  target 'YQUIKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
