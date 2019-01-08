@@ -101,7 +101,13 @@
 - (UIButton*) loginButton{
     if (!_loginButton) {
         _loginButton = [self addSolidButton:[UIColor mainThemeColor] size:CGSizeMake(320, 48) title:@"登录" titleSize:16];
+        [_loginButton addTarget:self action:@selector(loginButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _loginButton;
+}
+
+#pragma mark - button click events
+- (void) loginButtonClicked:(id) sender{
+    [NSObject showToaster:@"Toast aldskfjaksfdja;sdfj"];
 }
 @end

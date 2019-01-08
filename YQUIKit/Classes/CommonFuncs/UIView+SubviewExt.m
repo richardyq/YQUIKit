@@ -1,17 +1,17 @@
 //
-//  UIViewController+SubViewExt.m
+//  UIView+SubviewExt.m
 //  YQUIKit
 //
 //  Created by YinQ on 2019/1/8.
 //
 
-#import "UIViewController+SubViewExt.h"
+#import "UIView+SubviewExt.h"
 
-@implementation UIViewController (SubViewExt)
+@implementation UIView (SubviewExt)
 
 - (UILabel*) addLabel{
     UILabel* label = [[UILabel alloc] init];
-    [self.view addSubview:label];
+    [self addSubview:label];
     return label;
 }
 
@@ -25,7 +25,7 @@
 
 - (UIImageView*) addImageView{
     UIImageView* imageView = [[UIImageView alloc] init];
-    [self.view addSubview:imageView];
+    [self addSubview:imageView];
     return imageView;
 }
 
@@ -37,7 +37,7 @@
 
 - (UITextField*) addTextField:(NSString*) placeholder{
     UITextField* textfield = [[UITextField alloc] init];
-    [self.view addSubview:textfield];
+    [self addSubview:textfield];
     textfield.placeholder = placeholder;
     
     return textfield;
@@ -46,7 +46,7 @@
 
 - (UITextField*) addTextField:(NSString*) placeholder class:(Class) class{
     UITextField* textfield = [[class alloc] init];
-    [self.view addSubview:textfield];
+    [self addSubview:textfield];
     textfield.placeholder = placeholder;
     
     return textfield;
@@ -73,7 +73,7 @@
 
 - (UIButton*) addButton:(UIButtonType) buttonType{
     UIButton* button = [UIButton buttonWithType:buttonType];
-    [self.view addSubview:button];
+    [self addSubview:button];
     
     return button;
 }
@@ -97,7 +97,7 @@
     [button setTitleColor:color forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:titleSize];
     [button setCornerRadius:4 color:color boarderwidth:1];
-
+    
     return button;
 }
 

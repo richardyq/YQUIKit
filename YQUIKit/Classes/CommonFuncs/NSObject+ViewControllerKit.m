@@ -32,7 +32,7 @@
     return NO;
 }
 
-- (UIViewController*) topMostController
++ (UIViewController*) topMostController
 {
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     UIViewController *topMostViewController = keyWindow.rootViewController;

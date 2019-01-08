@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of YQUIKit.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/richardyq@163.com/YQUIKit",
+  "homepage": "https://github.com/richardyq/YQUIKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "richardyq@163.com": "yinquan@jahosp.com"
   },
   "source": {
-    "git": "https://github.com/richardyq@163.com/YQUIKit.git",
+    "git": "https://github.com/richardyq/YQUIKit.git",
     "tag": "0.1.0"
   },
   "platforms": {

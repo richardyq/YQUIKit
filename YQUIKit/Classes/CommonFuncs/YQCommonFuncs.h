@@ -9,6 +9,9 @@
 #define YQCommonFuncs_h
 
 #import "NSObject+ViewControllerKit.h"
+#import "UIView+SubviewExt.h"
 #import "UIViewController+SubViewExt.h"
+
+#import "NSObject+Toast.h"
 
 #endif /* YQCommonFuncs_h */

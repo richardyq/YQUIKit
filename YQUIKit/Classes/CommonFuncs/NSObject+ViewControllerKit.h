@@ -15,6 +15,6 @@
 
 + (BOOL) isPad;
 
-- (UIViewController*) topMostController;
++ (UIViewController*) topMostController;
 
 @end
