@@ -109,5 +109,6 @@
 #pragma mark - button click events
 - (void) loginButtonClicked:(id) sender{
     [NSObject showToaster:@"Toast aldskfjaksfdja;sdfj"];
+    [YQPageManager entryMainStartPage];
 }
 @end

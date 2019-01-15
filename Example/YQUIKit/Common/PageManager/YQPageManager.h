@@ -12,4 +12,5 @@
 
 + (void) entryInitializationPage;
 
++ (void) entryMainStartPage;
 @end

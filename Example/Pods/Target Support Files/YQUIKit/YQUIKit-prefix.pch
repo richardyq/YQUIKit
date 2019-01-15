@@ -1,6 +1,6 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
-#import "YQUIKit-umbrella.h"
+#import "YQUIKit.h"
 #else
 #ifndef FOUNDATION_EXPORT
 #if defined(__cplusplus)

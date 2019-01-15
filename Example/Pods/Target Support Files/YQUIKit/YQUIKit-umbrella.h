@@ -17,6 +17,8 @@
 #import "YQCommonFuncs.h"
 #import "YQUIKit.h"
 #import "PopViewController.h"
+#import "TagView.h"
+#import "TagViewController.h"
 #import "ToastViewController.h"
 #import "UIColor+Standard.h"
 #import "UIImage+Shape.h"

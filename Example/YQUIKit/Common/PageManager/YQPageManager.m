@@ -8,12 +8,18 @@
 
 #import "YQPageManager.h"
 #import "YQInitializationViewController.h"
+#import "YQMainStartViewController.h"
 
 @implementation YQPageManager
 
 + (void) entryInitializationPage{
     UIViewController* startPageController = [[YQInitializationViewController alloc] initWithNibName:nil bundle:nil];
     [[NSObject rootWindow] setRootViewController:startPageController];
+}
+
++ (void) entryMainStartPage{
+    YQMainStartViewController* startPage = [[YQMainStartViewController alloc] initWithNibName:nil bundle:nil];
+    [[NSObject rootWindow] setRootViewController:startPage];
 }
 
 @end

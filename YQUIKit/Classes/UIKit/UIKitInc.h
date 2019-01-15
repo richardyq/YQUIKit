@@ -13,4 +13,5 @@
 #import "UIImage+Shape.h"
 #import "PopViewController.h"
 #import "ToastViewController.h"
+#import "TagViewController.h"
 #endif /* UIKitInc_h */

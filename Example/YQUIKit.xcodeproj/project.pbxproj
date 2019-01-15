@@ -12,6 +12,8 @@
 		2535480421E448D400AEA8DE /* InitializationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2535480321E448D400AEA8DE /* InitializationUtil.m */; };
 		2535480921E44D5300AEA8DE /* YQUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2535480821E44D5300AEA8DE /* YQUserLoginViewController.m */; };
 		2535482521E4761600AEA8DE /* UIColor+MainTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 2535482421E4761600AEA8DE /* UIColor+MainTheme.m */; };
+		259E781C21ED74F0008B8FCC /* YQMainStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 259E781B21ED74F0008B8FCC /* YQMainStartViewController.m */; };
+		259E782021ED7591008B8FCC /* YQSituationStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 259E781F21ED7591008B8FCC /* YQSituationStartViewController.m */; };
 		58CE4B1B86425291E35171BF /* Pods_YQUIKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 200516B2DF299D6A8A660372 /* Pods_YQUIKit_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -54,6 +56,10 @@
 		2535480821E44D5300AEA8DE /* YQUserLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQUserLoginViewController.m; sourceTree = "<group>"; };
 		2535482321E4761600AEA8DE /* UIColor+MainTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MainTheme.h"; sourceTree = "<group>"; };
 		2535482421E4761600AEA8DE /* UIColor+MainTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MainTheme.m"; sourceTree = "<group>"; };
+		259E781A21ED74F0008B8FCC /* YQMainStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQMainStartViewController.h; sourceTree = "<group>"; };
+		259E781B21ED74F0008B8FCC /* YQMainStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQMainStartViewController.m; sourceTree = "<group>"; };
+		259E781E21ED7591008B8FCC /* YQSituationStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQSituationStartViewController.h; sourceTree = "<group>"; };
+		259E781F21ED7591008B8FCC /* YQSituationStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQSituationStartViewController.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* YQUIKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YQUIKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -173,6 +179,24 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
+		259E781921ED74D8008B8FCC /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				259E781A21ED74F0008B8FCC /* YQMainStartViewController.h */,
+				259E781B21ED74F0008B8FCC /* YQMainStartViewController.m */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		259E781D21ED7581008B8FCC /* 当天情况 */ = {
+			isa = PBXGroup;
+			children = (
+				259E781E21ED7591008B8FCC /* YQSituationStartViewController.h */,
+				259E781F21ED7591008B8FCC /* YQSituationStartViewController.m */,
+			);
+			path = "当天情况";
+			sourceTree = "<group>";
+		};
 		3E265B71A45EDFEE2930EC63 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +245,8 @@
 		6003F593195388D20070C39A /* Example for YQUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				259E781D21ED7581008B8FCC /* 当天情况 */,
+				259E781921ED74D8008B8FCC /* 首页 */,
 				253547F321E43DC500AEA8DE /* Common */,
 				2535480521E44D2F00AEA8DE /* 用户 */,
 				253547EE21E43BE200AEA8DE /* 初始化 */,
@@ -492,8 +518,10 @@
 				2535480421E448D400AEA8DE /* InitializationUtil.m in Sources */,
 				6003F5A7195388D20070C39A /* YQViewController.m in Sources */,
 				2535480921E44D5300AEA8DE /* YQUserLoginViewController.m in Sources */,
+				259E782021ED7591008B8FCC /* YQSituationStartViewController.m in Sources */,
 				2535482521E4761600AEA8DE /* UIColor+MainTheme.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				259E781C21ED74F0008B8FCC /* YQMainStartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
