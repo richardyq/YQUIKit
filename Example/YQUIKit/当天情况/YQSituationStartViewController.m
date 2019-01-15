@@ -7,6 +7,7 @@
 //
 
 #import "YQSituationStartViewController.h"
+#import "YQMealSituationViewController.h"
 
 @interface YQSituationStartViewController ()
 
@@ -31,7 +32,7 @@
         NSMutableArray<UIViewController*>* controllers = [NSMutableArray<UIViewController*> array];
         NSArray<NSString*>* titles = @[@"吃饭情况", @"睡觉情况", @"兴趣学习"];
         [titles enumerateObjectsUsingBlock:^(NSString * _Nonnull title, NSUInteger idx, BOOL * _Nonnull stop) {
-            UIViewController* controller = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+            UIViewController* controller = [[YQMealSituationViewController alloc] initWithNibName:nil bundle:nil];
             controller.title = title;
             [controllers addObject:controller];
         }];
