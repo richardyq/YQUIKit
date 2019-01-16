@@ -14,7 +14,9 @@
 @implementation PopViewController
 
 + (void) show{
- 
+    if ([self hasBeenShown]) {
+        return;
+    }
     UIViewController* topMostController = [NSObject topMostController];
     PopViewController* popContorller = [self createController];
     
@@ -26,7 +28,9 @@
 }
 
 + (void) show:(id) param{
-    
+    if ([self hasBeenShown]) {
+        return;
+    }
     UIViewController* topMostController = [NSObject topMostController];
     PopViewController* popContorller = [self createController: param];
     if (!popContorller) {
@@ -38,6 +42,19 @@
         make.edges.equalTo(topMostController.view);
     }];
 }
+
++ (BOOL) hasBeenShown{
+    __block BOOL hasBeenShown = NO;
+    UIViewController* topMostController = [NSObject topMostController];
+    [topMostController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull controller, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([controller isKindOfClass:[self class]]) {
+            hasBeenShown = YES;
+            *stop = YES;
+        }
+    }];
+    return hasBeenShown;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
