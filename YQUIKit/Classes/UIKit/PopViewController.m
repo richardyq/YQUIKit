@@ -21,7 +21,7 @@
     [topMostController addChildViewController:popContorller];
     [topMostController.view addSubview:popContorller.view];
     [popContorller.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(popContorller.view);
+        make.edges.equalTo(topMostController.view);
     }];
 }
 
