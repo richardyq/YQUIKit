@@ -26,6 +26,7 @@
 #import "UIImage+Shape.h"
 #import "UIKitInc.h"
 #import "UIView+Boarder.h"
+#import "YQTextControl.h"
 
 FOUNDATION_EXPORT double YQUIKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char YQUIKitVersionString[];

@@ -11,15 +11,21 @@
 @interface YQMealSituationViewController ()
 
 @property (nonatomic, readonly) RadioGroup* radioGroup;
+@property (nonatomic, readonly) YQTextControl* textControl;
+
 @end
 
 @implementation YQMealSituationViewController
 
 @synthesize radioGroup = _radioGroup;
+@synthesize textControl = _textControl;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self layoutElements];
+    
+    self.textControl.text = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +40,12 @@
         make.height.mas_equalTo(@35);
         make.width.equalTo(self.view).offset(-188);
     }];
+    
+    [self.textControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.radioGroup.mas_bottom).offset(14);
+        make.size.mas_equalTo(CGSizeMake(80, 25));
+    }];
 }
 
 #pragma mark - settingAndGetting
@@ -43,6 +55,14 @@
         [self.view addSubview:_radioGroup];
     }
     return _radioGroup;
+}
+
+- (YQTextControl*) textControl{
+    if (!_textControl) {
+        _textControl = [[YQTextControl alloc] initWithPlaceholder:@"选择日期" textSize:13];
+        [self.view addSubview:_textControl];
+    }
+    return _textControl;
 }
 
 @end

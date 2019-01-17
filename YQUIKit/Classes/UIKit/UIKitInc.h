@@ -15,4 +15,6 @@
 #import "ToastViewController.h"
 #import "TagViewController.h"
 #import "RadioGroup.h"
+#import "YQTextControl.h"
+
 #endif /* UIKitInc_h */
