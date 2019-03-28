@@ -48,7 +48,7 @@
 
 - (UIViewController*) upperViewController:(UIViewController*) viewController
 {
-    UIViewController* upperViewController = viewController;
+    __block UIViewController* upperViewController = viewController;
     while (upperViewController.presentedViewController) {
         
         upperViewController = upperViewController.presentedViewController;
@@ -60,6 +60,12 @@
         upperViewController = [(UITabBarController *)upperViewController selectedViewController];
     }
     
+    [upperViewController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull controller, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([controller isKindOfClass:[UITabBarController class]]) {
+            *stop = YES;
+            upperViewController = [(UITabBarController *)controller selectedViewController];
+        }
+    }];
     return upperViewController;
 }
 @end

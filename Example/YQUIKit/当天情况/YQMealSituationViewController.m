@@ -61,8 +61,21 @@
     if (!_textControl) {
         _textControl = [[YQTextControl alloc] initWithPlaceholder:@"选择日期" textSize:13];
         [self.view addSubview:_textControl];
+        [_textControl addTarget:self action:@selector(onTextControlClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _textControl;
+}
+
+#pragma mark - control events
+- (void) onTextControlClicked:(id) sender{
+    NSArray<NSString*>* titles = @[@"吃得好", @"吃的一般", @"吃的不好"];
+    CGRect controlRect = [self.textControl convertRect:self.textControl.bounds toView:[NSObject topMostController].view];
+    CGPoint pt = controlRect.origin;
+    pt.y += controlRect.size.height;
+    PopMenuViewController* menuController = [PopMenuViewController showWithTitles:titles width:self.textControl.width startPos:pt];
+    
+    [menuController setManualClose:YES];
+    
 }
 
 @end

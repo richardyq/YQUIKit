@@ -27,12 +27,15 @@
         [[NSObject rootWindow] setRootViewController:loginPage];
         return;
     }
+    else{
+        [YQPageManager entryMainStartPage];
+    }
     
 }
 
 - (BOOL) needLogin{
     BOOL needLogin = YES;
-    
+    needLogin = NO;
     return needLogin;
 }
 

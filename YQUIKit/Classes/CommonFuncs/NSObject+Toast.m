@@ -6,7 +6,7 @@
 //
 
 #import "NSObject+Toast.h"
-
+#import "ToastViewController.h"
 @implementation NSObject (Toast)
 
 + (void) showToaster:(NSString*) text{

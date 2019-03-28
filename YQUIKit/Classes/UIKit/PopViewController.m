@@ -15,10 +15,10 @@
 
 @synthesize selectHandler = _selectHandler;
 
-+ (void) show{
++ (PopViewController*) show{
  
     if ([self hasBeenShown]) {
-        return;
+        return nil;
     }
     UIViewController* topMostController = [NSObject topMostController];
     PopViewController* popContorller = [self createController];
@@ -28,38 +28,44 @@
     [popContorller.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(topMostController.view);
     }];
+    
+    return popContorller;
 }
 
-+ (void) show:(id) param{
++ (PopViewController*) show:(id) param{
     if ([self hasBeenShown]) {
-        return;
+        return nil;
     }
     UIViewController* topMostController = [NSObject topMostController];
     PopViewController* popContorller = [self createController: param];
     if (!popContorller) {
-        return;
+        return nil;
     }
     [topMostController addChildViewController:popContorller];
     [topMostController.view addSubview:popContorller.view];
     [popContorller.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(topMostController.view);
     }];
+    
+    return popContorller;
 }
 
-+ (void) show:(id) param handler:(PopSelectHanler) hanlder{
++ (PopViewController*) show:(id) param handler:(PopSelectHanler) hanlder{
     if ([self hasBeenShown]) {
-        return;
+        return nil;
     }
     UIViewController* topMostController = [NSObject topMostController];
     PopViewController* popContorller = [self createController: param handler:hanlder];
     if (!popContorller) {
-        return;
+        return nil;
     }
     [topMostController addChildViewController:popContorller];
     [topMostController.view addSubview:popContorller.view];
     [popContorller.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(topMostController.view);
     }];
+    
+    return popContorller;
 }
 
 + (BOOL) hasBeenShown{
@@ -72,6 +78,12 @@
         }
     }];
     return hasBeenShown;
+}
+
+- (void) loadView{
+    UIControl* closeController = [UIControl new];
+    [self setView:closeController];
+    [closeController addTarget:self action:@selector(closeControlClicked:) forControlEvents:UIControlEventAllTouchEvents];
 }
 
 - (void)viewDidLoad {
@@ -92,24 +104,32 @@
 - (id) initWithParam:(id) param handler:(PopSelectHanler) handler{
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
+        
         _selectHandler = handler;
     }
     return self;
 }
 
 + (PopViewController*) createController{
-    PopViewController* controller = [[self.class alloc] initWithNibName:nil bundle:nil];
+    PopViewController* controller = [self createController:nil];
     return controller;
 }
 
 + (PopViewController*) createController:(id) param{
-    PopViewController* controller = [[self.class alloc] initWithNibName:nil bundle:nil];
+    PopViewController* controller = [self createController:param handler:nil ];
     return controller;
 }
 
 + (PopViewController*) createController:(id) param handler:(PopSelectHanler) handler{
     PopViewController* controller = [[self.class alloc] initWithParam:param handler:handler];
     return controller;
+}
+
+- (void) closeControlClicked:(id) sender
+{
+    if(self.manualClose){
+        [self closeController];
+    }
 }
 
 - (void) closeController{

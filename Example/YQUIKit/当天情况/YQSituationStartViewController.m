@@ -31,8 +31,12 @@
     if (!_controllers) {
         NSMutableArray<UIViewController*>* controllers = [NSMutableArray<UIViewController*> array];
         NSArray<NSString*>* titles = @[@"吃饭情况", @"睡觉情况", @"兴趣学习"];
+        NSArray<Class>* classes = @[NSClassFromString(@"YQMealSituationViewController"),
+                                    NSClassFromString(@"UIViewController"),
+                                    NSClassFromString(@"UIViewController")];
         [titles enumerateObjectsUsingBlock:^(NSString * _Nonnull title, NSUInteger idx, BOOL * _Nonnull stop) {
-            UIViewController* controller = [[YQMealSituationViewController alloc] initWithNibName:nil bundle:nil];
+            Class controllerClass = classes[idx];
+            UIViewController* controller = [[controllerClass alloc] initWithNibName:nil bundle:nil];
             controller.title = title;
             [controllers addObject:controller];
         }];

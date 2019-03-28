@@ -13,11 +13,13 @@ typedef void(^PopSelectHanler)(id ret);
 
 @property (nonatomic, readonly) PopSelectHanler selectHandler;
 
-+ (void) show;
+@property (nonatomic, assign) BOOL manualClose;     //是否需要点击空白区域关闭
 
-+ (void) show:(id) param;
++ (PopViewController*) show;
 
-+ (void) show:(id) param handler:(PopSelectHanler) hanlder;
++ (PopViewController*) show:(id) param;
+
++ (PopViewController*) show:(id) param handler:(PopSelectHanler) hanlder;
 
 - (void) closeController;
 
